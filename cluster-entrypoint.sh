@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# If current instance is master, then just run server.
+[[ $MASTER == 'true' ]] && /usr/local/bin/docker-entrypoint.sh rabbitmq-server
+
 set -e
 
 # Start RMQ from entry point.
